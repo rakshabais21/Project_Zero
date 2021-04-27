@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.4.final using JasperReports Library version 6.0.4  -->
+<!-- 2020-03-03T16:18:27 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="939c1b1a-7f14-43ea-9856-655b2a2cb04f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter (4)"/>
+	<queryString>
+		<![CDATA[select  roll_number,student_name, physics, chemistry, maths,physics+chemistry+maths as total from st_marksheet where  maths>35 and chemistry>35 and physics>35 order by total desc limit 0,10]]>
+	</queryString>
+	<field name="roll_number" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="student_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="physics" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="chemistry" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="maths" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double"/>
+	<group name="roll_number">
+		<groupExpression><![CDATA[$F{roll_number}]]></groupExpression>
+	</group>
+	<group name="student_name">
+		<groupExpression><![CDATA[$F{student_name}]]></groupExpression>
+	</group>
+	<group name="physics">
+		<groupExpression><![CDATA[$F{physics}]]></groupExpression>
+	</group>
+	<group name="chemistry">
+		<groupExpression><![CDATA[$F{chemistry}]]></groupExpression>
+	</group>
+	<group name="maths">
+		<groupExpression><![CDATA[$F{maths}]]></groupExpression>
+	</group>
+	<group name="total">
+		<groupExpression><![CDATA[$F{total}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="158" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="120" width="46" height="38" uuid="fc911b51-f232-47a5-a569-3084a0ac052b"/>
+				<imageExpression><![CDATA["C:/Users/HP Home PC/Desktop/practice/download.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="240" y="110" width="130" height="39" uuid="d7359ca2-71e2-42a4-ae95-c34085d013cb"/>
+				<text><![CDATA[MARKSHEET MERIT LIST]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="60" width="100" height="30" uuid="83238cd4-8a97-415d-a0af-cfa27ec0419f"/>
+				<text><![CDATA[ROLL_NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="101" y="60" width="100" height="30" uuid="0515d5c9-18f5-4844-817d-3e00d7065e37"/>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="60" width="80" height="30" uuid="47c3a4b8-b090-494a-b0bd-4284fe63025f"/>
+				<text><![CDATA[PHYSICS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="60" width="80" height="30" uuid="5226ad96-a812-46c6-90ef-ae2136c93e17"/>
+				<text><![CDATA[CHEMISTRY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="60" width="80" height="30" uuid="12d037a2-e456-4c1f-bb53-8a0c44b8cdd7"/>
+				<text><![CDATA[MATHS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="60" width="80" height="30" uuid="9de8b622-f036-4f56-b73a-ebec6d954e7e"/>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="100" height="30" uuid="5b2dea9b-e00d-4f4d-a9db-80352bab9ae0"/>
+				<textFieldExpression><![CDATA[$F{roll_number}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="0" width="100" height="30" uuid="6d19b275-eeb1-474d-9680-f1757a74836d"/>
+				<textFieldExpression><![CDATA[$F{student_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="80" height="30" uuid="33d87223-aa7b-414b-ad5d-8f266c1db126"/>
+				<textFieldExpression><![CDATA[$F{physics}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="316" y="0" width="74" height="30" uuid="9e315dd0-82f8-4a72-a26b-6cda3634af77"/>
+				<textFieldExpression><![CDATA[$F{chemistry}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="80" height="30" uuid="fa560de9-83b9-46ee-baa8-91a0cfd2c37b"/>
+				<textFieldExpression><![CDATA[$F{maths}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="501" y="0" width="69" height="30" uuid="89037ac9-eccc-4ff1-aefc-cf9cc7ef4dd4"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
